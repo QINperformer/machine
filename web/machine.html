@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <!-- Site Properties -->
+        <title>警院信息查询系统（小警智能机器人）</title>
+        <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.css">
+        <script src="jquery/jquery-1.11.1.min.js"></script>
+        <script src="Semantic-UI-CSS-master/semantic.js"></script>
+        <script>
+            function send() {
+                $.post("query",
+                        {
+                            natrualWords: $("#natrualWords").val()
+                        },
+                        function (data, status) {
+                            $("#content").html($("#content").html() + data);
+                            var div = document.getElementById('content');
+                            div.scrollTop = div.scrollHeight + 100;
+
+                        });
+
+
+            }
+        </script>
+    </head>
+
+    <body  style="background-image:url(static/22.jpg);margin:0px ;padding: 0px;height:100%; overflow-x:hidden;">
+        <div style="height: 30px;width: 100%"></div>
+        <div style="width:800px;height:580px;border: 1px  solid;margin: auto;border-color:#44ffff">
+            <div style="height:50px;width: 800px;border-bottom: 1px  solid;border-color:#44ffff;margin: auto">
+                <div style="height:50px;width:800px;padding-top:13px;font-size: 24px;color:#FF2733;margin-left: 190px;">
+                    警院信息查询系统（小警智能机器人）
+                </div>
+
+            </div>
+            <div  id="content" style="height:480px;border: 0px  solid;border-color:#44ffff;margin: auto;overflow-y: auto">
+                <div>
+
+                    <div class="ui feed"  style="float:right;margin-top: 5px;">
+                        <div class="event">
+                            <div class="content">
+                                <div class="date" style="margin-left: 0px"><span style="color: #44ffff">自己|1分钟前</span> </div>
+                                <div class="inline field">
+                                    <div class="ui right pointing red basic label" style="font-size:18px; ">你好，请介绍一下你自己 </div>
+                                </div>
+                            </div>
+                            <div class="label">
+                                <img src="http://www.semantic-ui.cn/images/avatar/small/jenny.jpg">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="ui feed">
+                        <div class="event">
+                            <div class="label">
+                                <img src="http://www.semantic-ui.cn/images/avatar/small/jenny.jpg">
+                            </div>
+                            <div class="content">
+                                <div class="date" style="margin-left: 15px"><span style="color: #44ffff">机器人|1分钟前</span> </div>
+                                <div class="inline field">
+
+                                    <div class="ui left pointing red basic label" style="font-size:18px;">我是智能机器人小警,请需要什么帮助？ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div style="height:50px;border-top: 1px  solid;border-color: #44ffff;margin: auto">
+                <div class="ui action input" style="width:100%;height:48px;">
+                    <textarea  id="natrualWords" rows="1" style="width:722px; border:0px;background:rgba(0, 0, 0, 0);padding-right: 10px;padding-top: 12px;color: #44ffff;font-size: 32px;text-height: 48px;  " name="natrualWords" placeholder=""></textarea>
+                    <button class="ui inverted red basic button" style="width:78px;height:48px;" onclick="send();">
+                        发送
+                    </button>
+
+                </div>
+                <div class="ui inverted segment" style="background:rgba(0, 0, 0, 0);margin-left: -15px">
+                    <button onclick="$('#natrualWords').val('警务技能：射击')" class="ui inverted red basic button" style="margin-top: 10px">警务技能：射击</button>
+                    <button onclick="$('#natrualWords').val('警务技能：军体拳')" class="ui inverted orange basic button" style="margin-top: 10px">警务技能：军体</button>
+                    <button onclick="$('#natrualWords').val('警务技能：擒拿')" class="ui inverted yellow basic button" style="margin-top: 10px">警务技能：擒拿</button>
+                    <button onclick="$('#natrualWords').val('警务技能：散打')" class="ui inverted olive basic button" style="margin-top: 10px">警务技能：散打</button>
+                    <button onclick="$('#natrualWords').val('警务技能：队列')" class="ui inverted green basic button" style="margin-top: 10px">警务技能：队列</button>
+                    <button onclick="$('#natrualWords').val('警务技能：现场急救')" class="ui inverted teal basic button" style="margin-top: 10px">警务技能：急救</button>
+                    <button onclick="$('#natrualWords').val('警务技能：带离')" class="ui inverted blue basic button" style="margin-top: 10px">警务技能：带离</button>
+                    <button onclick="$('#natrualWords').val('警务技能：犯罪心理')" class="ui inverted violet basic button" style="margin-top: 10px">警务技能：犯罪</button>
+                    <button onclick="$('#natrualWords').val('警务技能：侦查')" class="ui inverted purple basic button" style="margin-top: 10px">警务技能：侦查</button>
+                    <button onclick="$('#natrualWords').val('警务技能：战术')" class="ui inverted pink basic button" style="margin-top: 10px">警务技能：战术</button>
+
+                    <div class="ui divider"></div>
+                    <button onclick="$('#natrualWords').val('警用装备：抓捕器')" class="ui inverted red basic button" style="margin-top: 10px">警用装备：抓捕器</button>
+                    <button onclick="$('#natrualWords').val('警用装备：执法记录仪')" class="ui inverted orange basic button" style="margin-top: 10px">警用装备：记录仪</button>
+                    <button onclick="$('#natrualWords').val('警用装备：强光手电')" class="ui inverted yellow basic button" style="margin-top: 10px">警用装备：光手电</button>
+                    <button onclick="$('#natrualWords').val('警用装备：电击棒')" class="ui inverted olive basic button" style="margin-top: 10px">警用装备：电击棒</button>
+                    <button onclick="$('#natrualWords').val('警用装备：防暴盾牌')" class="ui inverted green basic button" style="margin-top: 10px">警用装备：防暴盾</button>
+                    <button onclick="$('#natrualWords').val('警用装备：巡逻车')" class="ui inverted teal basic button" style="margin-top: 10px">警用装备：巡逻车</button>
+                    <button onclick="$('#natrualWords').val('警用装备：装备包')" class="ui inverted violet basic button" style="margin-top: 10px">警用装备：装备包</button>
+                    <button onclick="$('#natrualWords').val('警用装备：作战服')" class="ui inverted purple basic button" style="margin-top: 10px">警用装备：作战服</button>
+                    <button onclick="$('#natrualWords').val('警用装备：八件套')" class="ui inverted pink basic button" style="margin-top: 10px">警用装备：八件套</button>
+                    <button onclick="$('#natrualWords').val('警用装备：作战背心')" class="ui inverted blue basic button" style="margin-top: 10px">警用装备：作战背心</button>
+
+
+                    <div class="ui divider"></div>
+                    <button onclick="$('#natrualWords').val('关于立法目的人民警察法')" class="ui inverted red basic button" style="margin-top: 10px">人民警察法：立法目的</button>
+                    <button onclick="$('#natrualWords').val('关于公安机关任务的人民警察法')" class="ui inverted yellow basic button" style="margin-top: 10px">人民警察法：公安机关任务</button>
+                    <button onclick="$('#natrualWords').val('关于公安机关、人民警察的概念的人民警察法')" class="ui inverted orange basic button" style="margin-top: 10px">人民警察法：人民警察的概念</button>
+                    <button onclick="$('#natrualWords').val('关于人民警察队伍建设基本原则的人民警察法')" class="ui inverted green basic button" style="margin-top: 10px">人民警察法：基本原则</button>
+                    <button onclick="$('#natrualWords').val('关于公安事权划分人民警察法')" class="ui inverted olive basic button" style="margin-top: 10px">人民警察法：公安事权划分</button>
+                    <button onclick="$('#natrualWords').val('关于权力行使适度原则的人民警察法')" class="ui inverted violet basic button" style="margin-top: 10px">人民警察法：权力行使适度原则</button>
+                    <button onclick="$('#natrualWords').val('关于法治原则的人民警察法')" class="ui inverted blue basic button" style="margin-top: 10px">人民警察法：法治原则</button>
+                    <button onclick="$('#natrualWords').val('关于专群结合原则的人民警察法')" class="ui inverted teal basic button" style="margin-top: 10px">人民警察法：专群结合原则</button>
+                    <button onclick="$('#natrualWords').val('关于执行职务受法律保护的人民警察法')" class="ui inverted purple basic button" style="margin-top: 10px">人民警察法：执行职务受法律保护</button>
+                    <button onclick="$('#natrualWords').val('关于国家对人民警察的权益保护的人民警察法')" class="ui inverted pink basic button" style="margin-top: 10px">人民警察法：权益保护</button>
+
+                    <div class="ui divider"></div>
+                    <button onclick="$('#natrualWords').val('新增警员信息')" class="ui inverted green basic button" style="margin-top: 10px">新增警员信息</button>
+                    <button onclick="$('#natrualWords').val('查询警员信息')" class="ui inverted blue basic button" style="margin-top: 10px">查询警员信息</button>
+                    <button onclick="$('#natrualWords').val('删除警员信息')" class="ui inverted violet basic button" style="margin-top: 10px">删除警员信息</button>
+                    <button onclick="$('#natrualWords').val('修改警员信息')" class="ui inverted purple basic button" style="margin-top: 10px">修改警员信息</button>
+
+                    <div class="ui divider"></div>
+                    <button onclick="$('#natrualWords').val('我想对警院提些意见')" class="ui inverted blue basic button" style="margin-top: 10px">我想对警院提些意见</button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

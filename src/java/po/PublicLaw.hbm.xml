@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-22 15:00:51 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="po.PublicLaw" table="public_law" catalog="machine">
+        <id name="lid" type="java.lang.Integer">
+            <column name="Lid" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="strip" type="string">
+            <column name="strip" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="genre" type="string">
+            <column name="genre" length="100" not-null="true" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

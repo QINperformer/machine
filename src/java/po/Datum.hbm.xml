@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-22 15:00:51 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="po.Datum" table="datum" catalog="machine" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="num" type="string">
+            <column name="num" length="20" unique="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="20" />
+        </property>
+        <property name="sex" type="string">
+            <column name="sex" length="4" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="age" />
+        </property>
+        <property name="score" type="java.lang.Float">
+            <column name="score" precision="12" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

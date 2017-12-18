@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <!-- Site Properties -->
+        <title>Theming - Semantic</title>
+        <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.css">
+        <script src="jquery/jquery-1.11.1.min.js"></script>
+        <script src="Semantic-UI-CSS-master/semantic.js"></script>
+        <script>
+            function send() {
+                $.post("query",
+                        {
+                            natrualWords: $("#natrualWords").val()
+                        },
+                        function (data, status) {
+                            $("#content").html($("#content").html() + data);
+                            var div = document.getElementById('content');
+                            div.scrollTop = div.scrollHeight + 100;
+                            
+                        });
+
+
+            }
+        </script>
+    </head>
+
+    <body>
+        <div style="width: 800px;height:580px;border: 1px #000 solid;margin: auto">
+            <div style="height:50px;border: 1px #000 solid;margin: auto"></div>
+            <div  id="content" style="height:480px;border: 1px #000 solid;margin: auto;overflow-y: auto">
+                <div>
+
+                    <div class="ui feed"  style="float:right">
+                        <div class="event">
+                            <div class="content">
+                                <div class="date">自己|1分钟前 </div>
+                                <div class="inline field">
+
+                                    <div class="ui right pointing red basic label">That name is taken! </div>
+                                </div>
+                            </div>
+                            <div class="label">
+                                <img src="http://www.semantic-ui.cn/images/avatar/small/jenny.jpg">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="ui feed">
+                        <div class="event">
+                            <div class="label">
+                                <img src="http://www.semantic-ui.cn/images/avatar/small/jenny.jpg">
+                            </div>
+                            <div class="content">
+                                <div class="date">机器人|1分钟前 </div>
+                                <div class="inline field">
+
+                                    <div class="ui left pointing red basic label">That name is taken! </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div style="height:50px;border: 1px #000 solid;margin: auto">
+                <div class="ui action input" style="width:100%;height:48px;">
+                    <input id="natrualWords" type="text" placeholder="清输入">
+                    <button class="ui icon button" style="width:78px;height:48px;" onclick="send();">
+                        <i class="send outline icon"></i>发送
+                    </button>
+                </div></div>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-22 15:57:12 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="po.Idea" table="idea" catalog="machine" optimistic-lock="version">
+        <id name="iid" type="java.lang.Integer">
+            <column name="Iid" />
+            <generator class="identity" />
+        </id>
+        <property name="ideamessage" type="string">
+            <column name="ideamessage" length="65535" not-null="true" />
+        </property>
+        <property name="ideaTime" type="date">
+            <column name="ideaTime" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

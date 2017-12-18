@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-22 15:00:51 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="po.PublicSkill" table="public_skill" catalog="machine">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="skillName" type="string">
+            <column name="skill_name" length="20" not-null="true" unique="true" />
+        </property>
+        <property name="introduce" type="string">
+            <column name="introduce" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

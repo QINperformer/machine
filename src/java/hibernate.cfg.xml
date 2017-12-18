@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!--C3P0配置 -->
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.timeout">120</property>
+		<property name="automaticTestTable">Test</property>
+		<property name="hibernate.c3p0.max_statements">100</property>
+		<property name="hibernate.c3p0.idle_test_period">120</property>
+		<property name="hibernate.c3p0.acquire_increment">3</property>
+		<property name="c3p0.testConnectionOnCheckout">true</property>
+		<property name="c3p0.idleConnectionTestPeriod">60</property>
+		<property name="c3p0.maxIdleTime">30</property>
+		<property name="c3p0.idle_test_period">120</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.url">jdbc:mysql://139.199.175.120:3306/machine?zeroDateTimeBehavior=convertToNull</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">Whjg123456</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<mapping resource="po/Keyword.hbm.xml"/>
+		<mapping resource="po/Weather.hbm.xml"/>
+		<mapping resource="po/Operation.hbm.xml"/>
+		<mapping resource="po/PublicSkill.hbm.xml"/>
+		<mapping resource="po/PublicEquip.hbm.xml"/>
+		<mapping resource="po/PublicLaw.hbm.xml"/>
+		<mapping resource="po/Datum.hbm.xml"/>
+		<mapping resource="po/Idea.hbm.xml"></mapping>
+	</session-factory>
+</hibernate-configuration>
